@@ -3,8 +3,10 @@ package fun.jingo.technology.pojo;
 public class Mouse {
     //鼠标在数据库中的id
     private Integer id;
-    //鼠标型号
+    //鼠标型号（英文）
     private String model;
+    //鼠标型号（中文）
+    private String modelC;
     //图片路径
     private String imgurl;
     //价格
@@ -44,6 +46,14 @@ public class Mouse {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public String getModelC() {
+        return modelC;
+    }
+
+    public void setModelC(String modelC) {
+        this.modelC = modelC;
     }
 
     public String getImgurl() {
