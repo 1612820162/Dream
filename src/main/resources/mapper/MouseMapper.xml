@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="fun.jingo.technology.dao.MouseMapper" >
+    <resultMap id="MouseResultMap" type="fun.jingo.technology.pojo.Mouse" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="model" property="model" jdbcType="VARCHAR"/>
+        <result column="modelC" property="modelC" jdbcType="VARCHAR"/>
+        <result column="imgurl" property="imgurl" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="VARCHAR"/>
+        <result column="brand" property="brand" jdbcType="VARCHAR"/>
+        <result column="brandC" property="brandC" jdbcType="VARCHAR"/>
+        <result column="wired" property="wired" jdbcType="VARCHAR"/>
+        <result column="dpi" property="dpi" jdbcType="VARCHAR"/>
+        <result column="hand" property="hand" jdbcType="VARCHAR"/>
+        <result column="esports" property="esports" jdbcType="VARCHAR"/>
+        <result column="message" property="message" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="mouseColumns" >
+        id,
+        model,
+        modelC,
+        imgurl,
+        price,
+        brand,
+        brandC,
+        wired,
+        dpi,
+        hand,
+        esports,
+        message
+    </sql>
+
+    <select id="getAll" resultMap="MouseResultMap" >
+        select
+        <include refid="mouseColumns"/>
+        from mouse
+    </select>
+
+    <select id="getByBrand" resultMap="MouseResultMap" >
+        select
+        <include refid="mouseColumns"/>
+        from mouse
+        where brand = #{brand}
+    </select>
+
+    <select id="getByWired" resultMap="MouseResultMap" >
+        select
+        <include refid="mouseColumns"/>
+        from mouse
+        where wired = #{wired}
+    </select>
+
+    <select id="getByHand" resultMap="MouseResultMap" >
+        select
+        <include refid="mouseColumns"/>
+        from mouse
+        where hand = #{hand}
+    </select>
+
+    <select id="getByEsports" resultMap="MouseResultMap" >
+        select
+        <include refid="mouseColumns"/>
+        from mouse
+        where esports = #{esports}
+    </select>
+
+<!--    <select id="getBySex" resultMap="BaseResultMap" >-->
+<!--        select-->
+<!--        *-->
+<!--        from users-->
+<!--        where sex = #{sex}-->
+<!--    </select>-->
+
+<!--    <insert id="insert" parameterType="com.example.demo0.pojo.User" >-->
+<!--        insert into-->
+<!--        users-->
+<!--        (id,userName,password,phone,name,sex,age)-->
+<!--        values-->
+<!--        (#{id},#{userName},#{password},#{phone},#{name},#{sex},#{age})-->
+<!--    </insert>-->
+
+<!--    <update id="update" parameterType="com.example.demo0.pojo.User" >-->
+<!--        update-->
+<!--        users-->
+<!--        <set>-->
+<!--            <if test="id!=null" >-->
+<!--                id=#{id},-->
+<!--            </if>-->
+<!--            <if test="userName!=null" >-->
+<!--                userName=#{userName},-->
+<!--            </if>-->
+<!--            <if test="password!=null" >-->
+<!--                password=#{password},-->
+<!--            </if>-->
+<!--            <if test="phone!=null" >-->
+<!--                phone=#{phone},-->
+<!--            </if>-->
+<!--            <if test="name != null" >-->
+<!--                name=#{name},-->
+<!--            </if>-->
+<!--            <if test="sex!=null" >-->
+<!--                sex=#{sex},-->
+<!--            </if>-->
+<!--            <if test="age!=null" >-->
+<!--                age=#{age}-->
+<!--            </if>-->
+<!--        </set>-->
+<!--        where id=#{id}-->
+<!--    </update>-->
+
+<!--    <delete id="delete" parameterType="java.lang.String" >-->
+<!--        delete from-->
+<!--        users-->
+<!--        where-->
+<!--        userName =#{userName}-->
+<!--    </delete>-->
+
+<!--    <delete id="deleteAll" >-->
+<!--        delete from-->
+<!--        users-->
+<!--    </delete>-->
+</mapper>
