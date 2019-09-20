@@ -21,6 +21,8 @@ public class Mouse {
     private String dpi;
     //是否支持左手
     private String hand;
+    //是否为电竞鼠标
+    private String esports;
     //一些告知信息
     private String message;
 
@@ -102,6 +104,14 @@ public class Mouse {
 
     public void setDpi(String dpi) {
         this.dpi = dpi;
+    }
+
+    public String getEsports() {
+        return esports;
+    }
+
+    public void setEsports(String esports) {
+        this.esports = esports;
     }
 
     public String getMessage() {

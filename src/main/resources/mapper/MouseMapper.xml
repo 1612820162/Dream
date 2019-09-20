@@ -65,12 +65,16 @@
         where esports = #{esports}
     </select>
 
-<!--    <select id="getBySex" resultMap="BaseResultMap" >-->
-<!--        select-->
-<!--        *-->
-<!--        from users-->
-<!--        where sex = #{sex}-->
-<!--    </select>-->
+    <select id="getByWord" resultMap="MouseResultMap" >
+        select
+        *
+        from mouse
+        <where>
+            <if test="word != null">
+                model like CONCAT(CONCAT('%', #{word}),'%')
+            </if>
+        </where>
+    </select>
 
 <!--    <insert id="insert" parameterType="com.example.demo0.pojo.User" >-->
 <!--        insert into-->

@@ -36,4 +36,9 @@ public class MouseService {
     //根据是否为电竞鼠标查找鼠标信息
     public List<Mouse> getByEsports(String esports){return mouseMapper.getByEsports(esports);}
 
+    //对鼠标型号进行模糊查询
+    public List<Mouse> getByWord(String word){
+        return mouseMapper.getByWord(word);
+    }
+
 }

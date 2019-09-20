@@ -74,4 +74,16 @@ public class MouseController {
         }
     }
 
+    //搜索功能（对鼠标型号进行模糊查询）
+    @GetMapping(value = "/getbyword/{word}")
+    public RetResult<Mouse> getByWord(@PathVariable("word") String word){
+        String wordS=word.toLowerCase();
+        List<Mouse> mouseList=mouseService.getByWord(word);
+        if (mouseList.size()>0){
+            return RetResponse.makeRsp(200,"查找成功",mouseList);
+        }else {
+            return RetResponse.makeRsp(201,"暂无数据");
+        }
+    }
+
 }
