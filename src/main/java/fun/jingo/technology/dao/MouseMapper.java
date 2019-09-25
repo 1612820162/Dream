@@ -18,7 +18,7 @@ public interface MouseMapper {
     List<Mouse> getByHand(String hand);
     //根据是否为电竞鼠标查询
     List<Mouse> getByEsports(String esports);
-    //对鼠标型号进行模糊查询
+    //搜索功能（对鼠标型号进行模糊查询）
     List<Mouse> getByWord(String word);
 
 }
